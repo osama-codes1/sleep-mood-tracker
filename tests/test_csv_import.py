@@ -40,6 +40,6 @@ def test_load_entries_skips_existing_dates(db_session):
         {"date": datetime.date(2026, 9, 2), "sleep_hours": 6.0, "mood": 6},
     ]
     assert load_entries(db_session, entries) == (2, 0)
-    # Loading the same data again inserts nothing
+  
     assert load_entries(db_session, entries) == (0, 2)
     assert db_session.query(models.Entry).count() == 2
