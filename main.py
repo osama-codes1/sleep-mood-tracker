@@ -12,7 +12,7 @@ from database import Base, SessionLocal, engine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Create the tables in the real database when the server starts
+    
     Base.metadata.create_all(bind=engine)
     yield
 
