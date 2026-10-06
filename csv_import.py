@@ -28,7 +28,7 @@ def parse_rows(rows) -> list[dict]:
     """
     cleaned = []
 
-    for line_number, row in enumerate(rows, start=2):  # line 1 is the header
+    for line_number, row in enumerate(rows, start=2):
         try:
             date = datetime.date.fromisoformat(row["date"].strip())
             sleep_hours = float(row["sleep_hours"])
